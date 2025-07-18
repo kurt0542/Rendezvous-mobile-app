@@ -1,16 +1,20 @@
-# mobile_app_project
+# Rendezvous
 
-A new Flutter project.
+Rendezvous is a social decision-making app that helps groups choose the
+perfect hangout spot. Whether you're planning a coffee break, night out,
+or weekend adventure, Rendezvous lets your group swipe through recommended
+places (like Tinder for locations) and vote on favorites – no more endless
+debates in the group chat.
 
-## Getting Started
+## ✨ Planned Features
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+📍 Smart Recommendations – Discover cafes, restaurants, and hangout spots near you
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+🤝 Group Rooms – Create a group and invite friends to vote together
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🔄 Swipe to Vote – Like or skip places in a fun, Tinder-style interface
+
+✅ Real-Time Results – Instantly see what your group is vibing with
+
+📊 Majority Wins – Let the group decide with a built-in voting system
