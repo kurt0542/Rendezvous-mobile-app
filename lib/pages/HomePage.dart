@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_project/models/category_container.dart';
 import 'package:mobile_app_project/models/search_bar.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final PageController _smoothPageController = PageController(
+    viewportFraction: 0.85,
+    initialPage: 1,
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,8 +24,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
           children: [
-            const SizedBox(height: 20),
-            // header beginning
+            SizedBox(height: 20),
             Row(
               children: [
                 Column(
@@ -35,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                     Text('Welcome back!'),
                   ],
                 ),
-                const Spacer(),
+                Spacer(),
                 Container(
                   height: 50,
                   width: 50,
@@ -48,8 +54,83 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             // header end
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             CustomSearchBar(),
+            SizedBox(height: 25),
+            Text(
+              'Featured',
+              style: TextStyle(
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 10),
+            SizedBox(
+              height: 400,
+              child: PageView(
+                controller: _smoothPageController,
+                // controller: PageController(viewportFraction: 0.85,initialPage: 1),
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(color: Colors.blue),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(color: Colors.green),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(10),
+                    decoration: BoxDecoration(color: Colors.red),
+                  ),
+                ],
+              ),
+            ),
+            Center(
+              child: SmoothPageIndicator(
+                controller: _smoothPageController,
+                count: 3,
+                effect: WormEffect(
+                  activeDotColor: Colors.blueAccent,
+                  dotHeight: 13,
+                  dotWidth: 13,
+                ),
+                onDotClicked: (index) {
+                  _smoothPageController.animateToPage(
+                    index,
+                    duration: Duration(milliseconds: 700),
+                    curve: Curves.ease,
+                  );
+                },
+              ),
+            ),
+            Text(
+              'Browse',
+              style: TextStyle(
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                CategoryContainer(text: 'Coffee Shops',textIcon: Icons.coffee_rounded),
+                Spacer(),
+                CategoryContainer(text: 'Fastfood',textIcon: Icons.fastfood),
+              ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                CategoryContainer(text: 'Restaurants',textIcon: Icons.restaurant),
+                Spacer(),
+                CategoryContainer(text: 'text',textIcon: Icons.coffee),
+              ],
+            ),
+
           ],
         ),
       ),
