@@ -21,7 +21,7 @@ class _MainFrameState extends State<MainFrame> {
 
   final List<Widget> _pages = [
     KeyboardDismissWrapper(child: HomePage()),
-    Center(child: ExplorePage()),
+    KeyboardDismissWrapper(child: ExplorePage()),
   ];
 
   @override
