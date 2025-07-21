@@ -64,7 +64,6 @@ class _HomePageState extends State<HomePage> {
               height: 400,
               child: PageView(
                 controller: _smoothPageController,
-                // controller: PageController(viewportFraction: 0.85,initialPage: 1),
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
@@ -104,23 +103,37 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             Row(
               children: [
-                CategoryContainer(
-                  text: 'Coffee Shops',
-                  textIcon: Icons.coffee_rounded,
+                Expanded(
+                  child: CategoryContainer(
+                    text: 'Coffee Shops',
+                    textIcon: Icons.coffee_rounded,
+                  ),
                 ),
-                Spacer(),
-                CategoryContainer(text: 'Fastfood', textIcon: Icons.fastfood),
+                SizedBox(width: 12),
+                Expanded(
+                  child: CategoryContainer(
+                    text: 'Fastfood',
+                    textIcon: Icons.fastfood,
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 20),
             Row(
               children: [
-                CategoryContainer(
-                  text: 'Restaurants',
-                  textIcon: Icons.restaurant,
+                Expanded(
+                  child: CategoryContainer(
+                    text: 'Restaurants',
+                    textIcon: Icons.restaurant,
+                  ),
                 ),
-                Spacer(),
-                CategoryContainer(text: 'Parks', textIcon: Icons.park_rounded),
+                SizedBox(width: 12),
+                Expanded(
+                  child: CategoryContainer(
+                    text: 'Parks',
+                    textIcon: Icons.park_rounded,
+                  ),
+                ),
               ],
             ),
             SizedBox(height: 20),
@@ -211,14 +224,126 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 20, top: 10),
-                    child: Text('Group name', style: TextStyle(fontSize: 18)),
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  top: 10,
+                  right: 20,
+                  bottom: 15,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Crew Name',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF0D47A1),
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+
+                    // Members & status
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '[0] members',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF1976D2),
+                          ),
+                        ),
+                        Text(
+                          'No plans yet!',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF1976D2),
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 12),
+
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.location_on,
+                              size: 18,
+                              color: Colors.blueGrey,
+                            ),
+                            SizedBox(width: 6),
+                            Text(
+                              'Last visited location: SM Clark',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.local_mall, size: 18),
+                            SizedBox(width: 6),
+                            Text("Mall"),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Spacer(),
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              onPressed: () {},
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(color: Color(0xFF1976D2)),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12,
+                                  vertical: 8,
+                                ),
+                              ),
+                              child: Text(
+                                'Edit',
+                                style: TextStyle(color: Color(0xFF1976D2)),
+                              ),
+                            ),
+                            const SizedBox(width: 7),
+                            ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Color(0xFF2196F3),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 10,
+                                ),
+                              ),
+                              child: Text(
+                                'Start Vote',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
             SizedBox(height: 20),
