@@ -21,9 +21,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8F8),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView(
+      body: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           children: [
             SizedBox(height: 20),
             Row(
@@ -346,10 +345,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
           ],
         ),
-      ),
-    );
+      );
   }
 }
