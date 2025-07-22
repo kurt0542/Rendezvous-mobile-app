@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_project/controller/keyboard_dismiss_wrapper.dart';
-import 'package:mobile_app_project/pages/ExplorePage.dart';
-import 'package:mobile_app_project/pages/HomePage.dart';
+import 'package:mobile_app_project/pages/explore_page.dart';
+import 'package:mobile_app_project/pages/home_page.dart';
 
 class MainFrame extends StatefulWidget {
   const MainFrame({super.key});
@@ -50,10 +50,10 @@ class _MainFrameState extends State<MainFrame> {
               icon: Icon(Icons.explore),
               label: 'explore',
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications), label: 'Notifications'),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_project/pages/FormModule.dart';
-
-
+import 'package:mobile_app_project/pages/form_module.dart';
 
 void main() {
   runApp(MainApp());
@@ -12,9 +10,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FormModule()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: FormModule());
   }
 }

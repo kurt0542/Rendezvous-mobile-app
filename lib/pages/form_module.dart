@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_project/models/loginandsignup/FormSwitch.dart';
-import 'package:mobile_app_project/models/loginandsignup/LoginForm.dart';
-import 'package:mobile_app_project/models/loginandsignup/SignUpForm.dart';
+import 'package:mobile_app_project/models/loginandsignup/form_switch.dart';
+import 'package:mobile_app_project/models/loginandsignup/login_form.dart';
+import 'package:mobile_app_project/models/loginandsignup/signup_form.dart';
 
 class FormModule extends StatefulWidget {
   const FormModule({super.key});
@@ -49,7 +49,6 @@ class _FormModuleState extends State<FormModule> {
                     ],
                   ),
                 ),
-                // Just use Expanded here for the scrollable container
                 Expanded(
                   child: Container(
                     decoration: const BoxDecoration(
@@ -84,7 +83,6 @@ class _FormModuleState extends State<FormModule> {
                                 : const SignUpForm(key: ValueKey('signup')),
                           ),
 
-                          // Spacer is not needed inside a scroll view — use SizedBox
                           const SizedBox(height: 40),
 
                           FormSwitch(

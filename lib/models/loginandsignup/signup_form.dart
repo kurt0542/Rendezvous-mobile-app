@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_project/models/CustomDivider.dart';
-import 'package:mobile_app_project/models/FormTextField.dart';
-import 'package:mobile_app_project/models/PasswordField.dart';
+import 'package:mobile_app_project/models/custom_divider.dart';
+import 'package:mobile_app_project/models/form_textfield.dart';
+import 'package:mobile_app_project/models/password_field.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({super.key});
