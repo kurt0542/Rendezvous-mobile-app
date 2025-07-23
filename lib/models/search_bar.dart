@@ -5,10 +5,10 @@ class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({super.key, this.paddingValue});
 
   @override
-  _CustomBarState createState() => _CustomBarState();
+  CustomBarState createState() => CustomBarState();
 }
 
-class _CustomBarState extends State<CustomSearchBar> {
+class CustomBarState extends State<CustomSearchBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(

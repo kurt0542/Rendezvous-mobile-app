@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_project/models/custom_divider.dart';
 import 'package:mobile_app_project/models/form_textfield.dart';
 import 'package:mobile_app_project/models/password_field.dart';
-import 'package:mobile_app_project/pages/MainFrame.dart';
+import 'package:mobile_app_project/pages/main_frame.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
