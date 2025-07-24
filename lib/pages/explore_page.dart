@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_project/labels/divider_label.dart';
+import 'package:mobile_app_project/models/category_container.dart';
 import 'package:mobile_app_project/models/explore%20page/distance_card.dart';
 import 'package:mobile_app_project/models/explore%20page/must_try_card.dart';
+import 'package:mobile_app_project/models/explore%20page/ratings_ranking.dart';
 import 'package:mobile_app_project/models/search_bar.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -66,8 +68,51 @@ class _ExplorePageState extends State<ExplorePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 20),
+                children: [MustTryCard(), MustTryCard()],
+              ),
+            ),
+            RatingsRanking(),
+          //  DividerLabel(text: 'Swipe to explore', paddingValue: 20),
+            DividerLabel(text: 'Categories', paddingValue: 20),
+            Padding(
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+              child: Row(
                 children: [
-                  MustTryCard(), MustTryCard()],
+                  Expanded(
+                    child: CategoryContainer(
+                      text: 'Coffee Shops',
+                      textIcon: Icons.coffee_rounded,
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: CategoryContainer(
+                      text: 'Fastfood',
+                      textIcon: Icons.fastfood,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: CategoryContainer(
+                      text: 'Restaurants',
+                      textIcon: Icons.restaurant,
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  Expanded(
+                    child: CategoryContainer(
+                      text: 'Parks',
+                      textIcon: Icons.park_rounded,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
