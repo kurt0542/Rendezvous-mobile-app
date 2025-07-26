@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "730545425054",
+    "project_id": "rendezvous-a8a22",
+    "storage_bucket": "rendezvous-a8a22.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730545425054:android:64e3b2692aca6349a9098f",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8grF70nbu4MKnbXJhW-nWErqTVcsqVis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
