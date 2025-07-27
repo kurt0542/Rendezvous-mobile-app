@@ -4,14 +4,21 @@ import 'package:mobile_app_project/models/form_textfield.dart';
 import 'package:mobile_app_project/models/password_field.dart';
 import 'package:mobile_app_project/pages/main_frame.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
+
+  @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  final TextEditingController _usernameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FormTextField(hintText: 'Username'),
+        FormTextField(hintText: 'Username', controller: _usernameController),
         SizedBox(height: 20),
         PasswordField(),
         SizedBox(height: 20),

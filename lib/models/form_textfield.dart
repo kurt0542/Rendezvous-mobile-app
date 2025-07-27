@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class FormTextField extends StatefulWidget {
   final String hintText;
-
-  const FormTextField({super.key, required this.hintText});
+  final TextEditingController controller;
+  const FormTextField({super.key, required this.hintText,
+  required this.controller});
 
   @override
   State<FormTextField> createState() => _FormTextFieldState();
@@ -46,6 +47,7 @@ class _FormTextFieldState extends State<FormTextField> {
       ),
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: TextField(
+        controller: widget.controller,
         focusNode: _focusNode,
         decoration: InputDecoration(
           enabledBorder: InputBorder.none,
