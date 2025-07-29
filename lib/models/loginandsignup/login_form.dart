@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_app_project/models/custom_divider.dart';
 import 'package:mobile_app_project/models/form_textfield.dart';
+import 'package:mobile_app_project/models/loginandsignup/custom_divider.dart';
+import 'package:mobile_app_project/models/loginandsignup/square_login_tile.dart';
 import 'package:mobile_app_project/models/password_field.dart';
 import 'package:mobile_app_project/pages/main_frame.dart';
+import 'package:mobile_app_project/services/auth_service.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -58,6 +60,10 @@ class _LoginFormState extends State<LoginForm> {
         ),
         SizedBox(height: 12),
         Customdivider(text: 'or'),
+        SquareLoginTile(
+          imagePath: "lib/images/google_logo_48x48.png",
+          onTap: () => AuthService().signInWithGoogle(),
+        ),
       ],
     );
   }
